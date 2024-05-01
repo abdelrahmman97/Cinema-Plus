@@ -1,1 +1,72 @@
-<p>header works!</p>
+<header class="tw-flex tw-flex-row tw-justify-between tw-items-center tw-px-3 tw-py-4">
+
+	<ul>
+		<!-- <li>
+			<button title="Open Menu" type="button" class="btn btn-transparent btn-no-border btn-left-menu">
+				<svg class="btn-left-menu" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+					stroke-width="1.5" stroke="currentColor">
+					<path stroke-linecap="round" stroke-linejoin="round"
+						d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+				</svg>
+			</button>
+		</li> -->
+		<li>
+			<a href="./list.html?media=movie" class="header-link">Movies</a>
+		</li>
+		<li>
+			<a href="./list.html?media=tv" class="header-link">Tv Series</a>
+		</li>
+	</ul>
+
+	<a href="/index.html" class="tw-text-2xl tw-text-white" id="logo-plus" data-replace="+">
+		Cinema
+		<span>
+			<strong>+</strong>
+		</span>
+	</a>
+
+	<ul>
+		<li>
+			<div>
+				<form action="./search.html">
+					<input type="search" name="s" id="search" placeholder="Search">
+				</form>
+			</div>
+		</li>
+		<li>
+			<button id="dropdownAvatarNameButton" class="" type="button">
+				<img id="dropdownAvatar" src="./resources/Images/user-avatar.jpg" alt="user photo">
+				<span id="dropdownUserName"></span>
+				<svg class="w-2.5 h-2.5 ml-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+					viewBox="0 0 10 6" id="dropdownSvgIcon">
+					<path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+						d="m1 1 4 4 4-4" />
+				</svg>
+			</button>
+			<!-- Dropdown menu -->
+			<div id="dropdownAvatarName" class="dropdownAvatarName">
+				<ul class="">
+					<li>
+						<a href="#"
+							class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Settings</a>
+					</li>
+					<li>
+						<a href="#" id="signout"
+							class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Sign
+							out</a>
+					</li>
+				</ul>
+			</div>
+		</li>
+		<!-- <li>
+			<a href="./login.html" class="header-link">Login</a>
+		</li>
+		<li>
+			<hr class="vertical-line">
+		</li>
+		<li>
+			<a href="./register.html" class="header-link">Register</a>
+		</li> -->
+	</ul>
+
+</header>
