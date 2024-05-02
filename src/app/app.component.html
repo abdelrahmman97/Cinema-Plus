@@ -1,4 +1,8 @@
-<div class="tw-flex tw-flex-col tw-p-0 tw-m-0 tw-gap-2 tw-h-max" [style.background-image]="backgroundImage">
-	<app-header></app-header>
-	<router-outlet />
+<ngx-loading-bar height="5px" color="#0072F5"></ngx-loading-bar>
+<div class="background-image" [style.background-image]="backgroundImage"></div>
+<div class="container">
+	<div class="tw-mx-auto tw-flex tw-flex-col tw-gap-2 tw-h-max tw-px-28">
+		<app-header></app-header>
+		<router-outlet />
+	</div>
 </div>
