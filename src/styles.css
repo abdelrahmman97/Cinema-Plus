@@ -33,7 +33,7 @@ svg {
 }
 
 .background-image {
-	position: fixed;
+	position: absolute;
 	height: 100vh;
 	background-position: center;
 	background-repeat: no-repeat;

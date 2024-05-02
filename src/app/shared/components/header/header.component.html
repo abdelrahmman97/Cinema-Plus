@@ -1,14 +1,6 @@
 <header class="tw-flex tw-flex-row tw-justify-between tw-items-center tw-px-3 tw-py-4">
 
-	<ul class="tw-list-none tw-flex tw-flex-row tw-flex-nowrap tw-items-center tw-gap-4">
-		@for (link of links; track $index) {
-		<li>
-			<a [routerLink]="['/'+link.path]" class="tw-relative tw-text-[#cccccc] hover:tw-text-[#ffffff] header-link">
-				{{ link.name }}
-			</a>
-		</li>
-		}
-	</ul>
+	<p-menubar [model]="items"></p-menubar>
 
 	<a href="/index.html" class="tw-text-2xl tw-text-white">
 		Cinema
@@ -17,16 +9,20 @@
 		</span>
 	</a>
 
-	<ul>
-		<li>
-			<form action="./search.html">
-				<input type="search" name="search" id="search" placeholder="Search"
-					class="tw-text-white tw-text-base tw-px-3 tw-py-2 tw-bg-[#3e3e3e8a] tw-backdrop-blur-xl tw-rounded-lg tw-border tw-border-[#ffffff2e]">
-			</form>
-		</li>
-		<li>
+	<div>
+		<input type="search" name="search" id="search" placeholder="Search"
+			class="lg:tw-flex tw-hidden tw-text-white tw-text-base tw-px-3 tw-py-2 tw-bg-[#3e3e3e8a] tw-backdrop-blur-xl tw-rounded-lg tw-border tw-border-[#ffffff2e]">
+		<button (click)="searchVisible=!searchVisible"
+			class="tw-flex lg:tw-hidden tw-text-white tw-text-base tw-px-3 tw-py-2 focus:tw-bg-[#3e3e3e8a] focus:tw-backdrop-blur-xl tw-rounded-lg focus:tw-border tw-border-[#ffffff2e]">
+			<i class="pi pi-search"></i>
+		</button>
+	</div>
 
-		</li>
-	</ul>
-
+	@if (searchVisible) {
+	<div class="tw-absolute tw-inset-0 tw-bg-[#00000024] tw-flex tw-flex-col tw-justify-center tw-items-center"
+		(click)="searchVisible=false">
+		<input type="search" name="search" id="search" placeholder="Search" click-stop-propagation
+			class="tw-w-1/2 tw-text-white tw-text-base tw-px-3 tw-py-2 tw-bg-[#3e3e3e8a] tw-backdrop-blur-xl tw-rounded-lg tw-border tw-border-[#ffffff2e]">
+	</div>
+	}
 </header>

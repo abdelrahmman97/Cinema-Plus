@@ -1,14 +1,31 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { MenuItem } from 'primeng/api';
 
 @Component( {
 	selector: 'app-header',
 	templateUrl: './header.component.html',
 	styleUrl: './header.component.css'
 } )
-export class HeaderComponent {
-	links: any[] = [
-		{ name: 'Movies', path: 'movies' },
-		{ name: 'TV Shows', path: 'tv-shows' },
-		{ name: 'People', path: 'people' }
-	];
+export class HeaderComponent implements OnInit {
+
+	items: MenuItem[] | undefined;
+	searchVisible: boolean = false;
+
+	ngOnInit (): void {
+		this.items = [
+			{
+				label: 'Movies',
+				routerLink: "/movies"
+			},
+			{
+				label: 'TV Shows',
+				routerLink: '/tv-shows',
+			},
+			{
+				label: 'People',
+				routerLink: '/people',
+			}
+		];
+	}
+
 }
