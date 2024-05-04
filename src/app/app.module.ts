@@ -30,7 +30,13 @@ export function HttpLoaderFactory ( http: HttpClient ) {
 		LoadingBarRouterModule,
 		ToastrModule.forRoot( {
 			closeButton: true,
-			tapToDismiss: false
+			tapToDismiss: false,
+			iconClasses: {
+				error: 'toast-error',
+				info: 'toast-info',
+				success: 'toast-success',
+				warning: 'toast-warning',
+			}
 		} ),
 		TranslateModule.forRoot(
 			{

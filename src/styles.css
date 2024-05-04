@@ -258,7 +258,7 @@ body {
 }
 .toast-close-button:hover,
 .toast-close-button:focus {
-	color: #000000;
+	color: #ffffff;
 	text-decoration: none;
 	cursor: pointer;
 	opacity: 0.4;
@@ -346,10 +346,11 @@ button.toast-close-button {
 
 .toast-title {
 	font-weight: 500;
+	padding: 0 2.5rem;
 }
 
 .toast-success {
-	background: rgba(34, 197, 94, 0.16);
+	background-color: rgba(34, 197, 94, 0.16);
 	border: solid rgba(21, 128, 61, 0.36);
 	border-width: 1px;
 	color: #22c55e;
@@ -360,7 +361,7 @@ button.toast-close-button {
 }
 
 .toast-error {
-	background: rgba(239, 68, 68, 0.16);
+	background-color: rgba(239, 68, 68, 0.16);
 	border: solid rgba(185, 28, 28, 0.36);
 	border-width: 1px;
 	color: #ef4444;
@@ -372,7 +373,7 @@ button.toast-close-button {
 }
 
 .toast-info {
-	background: rgba(59, 130, 246, 0.16);
+	background-color: rgba(59, 130, 246, 0.16);
 	border: solid rgba(29, 78, 216, 0.36);
 	border-width: 1px;
 	color: #3b82f6;
@@ -384,7 +385,7 @@ button.toast-close-button {
 }
 
 .toast-warning {
-	background: rgba(234, 179, 8, 0.16);
+	background-color: rgba(234, 179, 8, 0.16);
 	border: solid rgba(161, 98, 7, 0.36);
 	border-width: 1px;
 	color: #eab308;
