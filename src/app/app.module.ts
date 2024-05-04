@@ -8,9 +8,12 @@ import { LoadingBarHttpClientModule } from '@ngx-loading-bar/http-client';
 import { LoadingBarRouterModule } from '@ngx-loading-bar/router';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, provideHttpClient, withInterceptors } from '@angular/common/http';
 import { SharedModule } from './shared/shared.module';
 import { FeaturesModule } from './features/features.module';
+import { httpInterceptor } from './core/interceptor/http.interceptor';
+import { CoreModule } from './core/core.module';
+import { ToastrModule } from 'ngx-toastr';
 
 export function HttpLoaderFactory ( http: HttpClient ) {
 	return new TranslateHttpLoader( http, "./assets/i18n/", ".json" );
@@ -25,6 +28,10 @@ export function HttpLoaderFactory ( http: HttpClient ) {
 		BrowserAnimationsModule,
 		LoadingBarHttpClientModule,
 		LoadingBarRouterModule,
+		ToastrModule.forRoot( {
+			closeButton: true,
+			tapToDismiss: false
+		} ),
 		TranslateModule.forRoot(
 			{
 				defaultLanguage: 'en',
@@ -36,10 +43,13 @@ export function HttpLoaderFactory ( http: HttpClient ) {
 			}
 		),
 		AppRoutingModule,
+		CoreModule,
 		SharedModule,
 		FeaturesModule
 	],
-	providers: [],
+	providers: [
+		provideHttpClient( withInterceptors( [ httpInterceptor ] ) )
+	],
 	bootstrap: [ AppComponent ]
 } )
 export class AppModule { }
