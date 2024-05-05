@@ -1,14 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 
-@Component({
+@Component( {
 	selector: 'app-root',
 	templateUrl: './app.component.html',
 	styleUrl: './app.component.css'
-})
+} )
 export class AppComponent implements OnInit {
-	title = 'Cinema-Plus';
-
-	constructor() { }
+	title = 'Cinema Plus';
 
 	backgroundImageUrls: string[] = [
 		'./assets/images/poster-1.jpg',
@@ -16,16 +14,17 @@ export class AppComponent implements OnInit {
 		'./assets/images/poster-3.jpg',
 		'./assets/images/poster-4.jpg'
 	];
+	backgroundImage: string = this.backgroundImageUrls[ 0 ];
 
-	backgroundImage: string = this.backgroundImageUrls[0];
+	constructor () { }
 
-	ngOnInit() {
+	ngOnInit () {
 		this.setBackgroundImage();
 	}
 
-	setBackgroundImage() {
-		const randomIndex = Math.floor(Math.random() * this.backgroundImageUrls.length);
-		this.backgroundImage = `url(${this.backgroundImageUrls[randomIndex]})`;
+	setBackgroundImage () {
+		const randomIndex = Math.floor( Math.random() * this.backgroundImageUrls.length );
+		this.backgroundImage = `url(${ this.backgroundImageUrls[ randomIndex ] })`;
 	}
 
 }
