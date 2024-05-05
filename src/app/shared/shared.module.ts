@@ -14,7 +14,7 @@ import { ClickStopPropagationDirective } from './directives/click-stop-propagati
 	imports: [
 		CommonModule,
 		RouterModule,
-		MenubarModule
+		MenubarModule,
 	],
 	exports: [
 		HeaderComponent

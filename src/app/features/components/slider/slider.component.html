@@ -1,0 +1,87 @@
+<div class="movie-bg-image"
+	[ngStyle]="{'background-image': 'url(https://image.tmdb.org/t/p/original/'+currentItem?.backdrop_path+')'}">
+</div>
+
+<div class="movie-bg-image-2"></div>
+
+<div class="user-home-content">
+
+	<!-- Trending part -->
+	<div class="show-info">
+		<div class="div-badge">
+			<span id="show-badge" class="show-badge">Trending</span>
+		</div>
+		<div class="div-title">
+			<p class="show-title" id="show-title">
+				@if (currentItem?.media_type == "tv") {
+				{{currentItem?.name}}
+				}
+				@else if (currentItem?.media_type == "movie") {
+				{{currentItem?.title}}
+				}
+			</p>
+		</div>
+		<div class="div-description">
+			<p class="show-desc tw-line-clamp-3" id="show-desc">
+				{{currentItem?.overview}}
+			</p>
+		</div>
+		<div class="div-btns">
+			<button type="button" class="btn btn-default with-icon" id="addToCard">
+				<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+					stroke="currentColor" class="tw-w-6 tw-h-6">
+					<path stroke-linecap="round" stroke-linejoin="round"
+						d="M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.348a1.125 1.125 0 010 1.971l-11.54 6.347a1.125 1.125 0 01-1.667-.985V5.653z" />
+				</svg>
+				<p>Play Now</p>
+			</button>
+			<button type="button" class="btn btn-alt btn-transparent with-icon" id="moreInfo">
+				<p>More Info</p>
+				<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+					stroke="currentColor" class="tw-w-6 tw-h-6">
+					<path stroke-linecap="round" stroke-linejoin="round"
+						d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75" />
+				</svg>
+			</button>
+		</div>
+	</div>
+
+	<!-- Slider -->
+	<div class="slider">
+		<!-- Slider controls -->
+		<div class="slider-controls">
+			<!-- Previous Button -->
+			<button type="button" title="previous" id="data-slider-prev" [ngClass]="{'tw-hidden': currentIndex === 0}"
+				(click)="previous()">
+				<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+					stroke="currentColor" class="w-6 h-6">
+					<path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+				</svg>
+			</button>
+			<!-- Next Button -->
+			<button type="button" title="Next" id="data-slider-next" class="" (click)="next()">
+				<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+					stroke="currentColor" class="w-6 h-6">
+					<path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+				</svg>
+			</button>
+		</div>
+		<!-- Slider indicators -->
+		<div id="slider-indicators-group" class="slider-indicators-group">
+			@for (item of newItems; track $index) {
+			<button type="button" title="" class="slider-indicator" (click)="showSlide($index)"
+				[ngClass]="{'active': currentIndex === $index}"></button>
+			}
+			<button type="button" (click)="playPause()"
+				class="tw-flex tw-flex-row tw-items-center tw-justify-center hover:tw-bg-[#4040408a] tw-w-10 tw-h-10 tw-rounded-full">
+				@if (playing) {
+				<span class="pi pi-pause"></span>
+				}
+				@else {
+				<span class="pi pi-play"></span>
+				}
+			</button>
+		</div>
+	</div>
+
+</div>
