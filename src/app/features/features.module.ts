@@ -7,6 +7,7 @@ import { SliderComponent } from './components/slider/slider.component';
 import { MovieInfoComponent } from './components/movie-info/movie-info.component';
 import { TvShowInfoComponent } from './components/tv-show-info/tv-show-info.component';
 import { MinutesToHoursAndMinutesPipe } from "../core/pipes/minutesToHoursAndMinutes.pipe";
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule( {
 	declarations: [
@@ -19,7 +20,8 @@ import { MinutesToHoursAndMinutesPipe } from "../core/pipes/minutesToHoursAndMin
 	imports: [
 		CommonModule,
 		FeaturesRoutingModule,
-		MinutesToHoursAndMinutesPipe
+		MinutesToHoursAndMinutesPipe,
+		SharedModule
 	]
 } )
 export class FeaturesModule { }

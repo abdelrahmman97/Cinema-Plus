@@ -1,0 +1,13 @@
+<div class="video-modal" id="video-modal" [ngClass]="{'open': isModalOpen}">
+	<button type="button" title="close" class="btn-close-modal-video" (click)="closeModal()">
+		<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+			class="tw-w-6 tw-h-6">
+			<path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+		</svg>
+	</button>
+	<div class="video-modal-body">
+		<!-- <div id="videoTrailer"></div> -->
+		<!-- <video id="videoTrailer" src="./demo-video.mp4" controls></video> -->
+		<iframe id="videoTrailer" title="trailer" [src]="link"></iframe>
+	</div>
+</div>

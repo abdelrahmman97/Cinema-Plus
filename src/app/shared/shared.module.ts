@@ -4,12 +4,14 @@ import { HeaderComponent } from './components/header/header.component';
 import { RouterModule } from '@angular/router';
 import { MenubarModule } from 'primeng/menubar';
 import { ClickStopPropagationDirective } from './directives/click-stop-propagation.directive';
+import { VideoModalComponent } from './components/video-modal/video-modal.component';
 
 
 @NgModule( {
 	declarations: [
 		HeaderComponent,
-		ClickStopPropagationDirective
+		ClickStopPropagationDirective,
+		VideoModalComponent
 	],
 	imports: [
 		CommonModule,
@@ -17,7 +19,8 @@ import { ClickStopPropagationDirective } from './directives/click-stop-propagati
 		MenubarModule,
 	],
 	exports: [
-		HeaderComponent
+		HeaderComponent,
+		VideoModalComponent
 	]
 } )
 export class SharedModule { }

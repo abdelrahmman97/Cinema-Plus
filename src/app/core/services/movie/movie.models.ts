@@ -1,3 +1,4 @@
+//movie details
 export interface MovieDetails {
 	adult: boolean;
 	backdrop_path: string;
@@ -51,7 +52,7 @@ export interface SpokenLanguage {
 }
 
 
-
+// images
 export interface MoviePosters {
 	backdrops: Backdrop[];
 	id: number;
@@ -70,7 +71,7 @@ export interface Backdrop {
 }
 
 
-
+// credits
 export interface MovieCredits {
 	id: number;
 	cast: Cast[];
@@ -107,4 +108,27 @@ export enum Department {
 	Sound = "Sound",
 	VisualEffects = "Visual Effects",
 	Writing = "Writing",
+}
+
+// videos
+export interface MovieVideos {
+	id: number;
+	results: Video[];
+}
+
+export interface Video {
+	iso_639_1: string;
+	iso_3166_1: string;
+	name: string;
+	key: string;
+	site: Site;
+	size: number;
+	type: string;
+	official: boolean;
+	published_at: string;
+	id: string;
+}
+
+export enum Site {
+	YouTube = "YouTube",
 }

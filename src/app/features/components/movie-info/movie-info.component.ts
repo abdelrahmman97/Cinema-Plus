@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { MovieService } from '../../../core/services/movie/movie.service';
-import { MovieCredits, MovieDetails, MoviePosters } from '../../../core/services/movie/movie.models';
+import { MovieCredits, MovieDetails, MoviePosters, MovieVideos, Video } from '../../../core/services/movie/movie.models';
 
 @Component( {
 	selector: 'app-movie-info',
@@ -13,6 +13,9 @@ export class MovieInfoComponent implements OnInit {
 	movie: MovieDetails = {} as MovieDetails;
 	posters: MoviePosters = {} as MoviePosters;
 	credits: MovieCredits = {} as MovieCredits;
+	videos: MovieVideos = {} as MovieVideos;
+	trailer: Video = {} as Video;
+	showTrailer: boolean = false;
 
 	constructor (
 		private _activeRoute: ActivatedRoute,
@@ -24,13 +27,13 @@ export class MovieInfoComponent implements OnInit {
 		this.getMovieInfo( id );
 		this.getcredits( id );
 		this.getPosters( id );
+		this.getVideos( id );
 	}
 
 	getMovieInfo ( id: any ) {
 		this._movieService.getDetails( id ).subscribe( {
 			next: ( response ) => {
 				this.movie = response;
-				console.log( response );
 			},
 			error: ( error ) => {
 				console.log( error );
@@ -42,7 +45,6 @@ export class MovieInfoComponent implements OnInit {
 		this._movieService.getPosters( id ).subscribe( {
 			next: ( response ) => {
 				this.posters = response;
-				console.log( response );
 			},
 			error: ( error ) => {
 				console.log( error );
@@ -54,7 +56,6 @@ export class MovieInfoComponent implements OnInit {
 		this._movieService.getCredits( id ).subscribe( {
 			next: ( response ) => {
 				this.credits = response;
-				console.log( response );
 			},
 			error: ( error ) => {
 				console.log( error );
@@ -62,5 +63,24 @@ export class MovieInfoComponent implements OnInit {
 		} )
 	}
 
+	getVideos ( id: any ) {
+		this._movieService.getVideos( id ).subscribe( {
+			next: ( response ) => {
+				this.videos = response;
+				this.getTrailer( this.videos );
+			},
+			error: ( error ) => {
+				console.log( error );
+			}
+		} );
+	}
+
+	getTrailer ( videos: MovieVideos ) {
+		this.trailer = videos.results.find( ( v ) => v.type === 'Trailer' && v.name === "Official Trailer" && v.official === true ) ?? {} as Video;
+	}
+
+	toggleTrailer (): void {
+		this.showTrailer = !this.showTrailer;
+	}
 }
 

@@ -1,0 +1,67 @@
+.video-modal {
+	background-color: #3e3e3e8a;
+	background: #ffffff24;
+	backdrop-filter: blur(20px);
+	-webkit-backdrop-filter: blur(20px);
+	border: 1px solid rgba(255, 255, 255, 0.18);
+	border-top-left-radius: 3rem;
+	position: absolute;
+	border-top-right-radius: 3rem;
+	bottom: -100%;
+	left: 0;
+	width: 100vw;
+	height: 90vh;
+	padding: 4rem;
+	box-sizing: border-box;
+	transition: all 0.5s;
+}
+
+.video-modal.open {
+	bottom: 0%;
+	-webkit-animation: transform 0.5s ease;
+	animation: transform 0.5s ease;
+}
+
+.video-modal-body {
+	width: 100%;
+	display: block;
+	height: 100%;
+}
+
+#videoTrailer {
+	width: 100%;
+	height: 100%;
+}
+
+.btn-close-modal-video {
+	all: unset;
+	position: absolute;
+	top: 10px;
+	right: 2rem;
+	border-radius: 100%;
+	cursor: pointer;
+	height: 35px;
+	width: 35px;
+	background: #ffffff24;
+	backdrop-filter: blur(20px);
+	-webkit-backdrop-filter: blur(20px);
+	border: 1px solid rgba(255, 255, 255, 0.18);
+	padding: 0;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	color: rgb(255 255 255 / 70%);
+	justify-content: center;
+	align-items: center;
+}
+
+.btn-close-modal-video:hover {
+	background-color: #ff000040;
+	color: #ffffff;
+	border-color: #b30000;
+}
+
+.btn-close-modal-video:active,
+.btn-close-modal-video:focus {
+	border-color: #b30000;
+}

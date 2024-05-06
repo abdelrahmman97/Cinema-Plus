@@ -43,7 +43,7 @@
 					<div id="info-genre">
 						@for (gener of movie.genres; track $index) {
 						<a [routerLink]="['/movies', 'genre', gener.id]"
-							class="tw-mr-[2px] tw-border tw-border-[#4b4b4bb2] hover:tw-bg-[#4040408a] tw-rounded-full tw-px-1 tw-backdrop-blur">
+							class="tw-mr-[2px] tw-border tw-border-[#4b4b4bb2] hover:tw-bg-[#404040a9] tw-rounded-full tw-px-1 tw-backdrop-blur-md">
 							{{gener.name}}
 						</a>
 						}
@@ -78,7 +78,7 @@
 				Play Now
 			</button>
 
-			<button type="button" class="btn btn-alt btn-transparent with-icon" id="trailerBtn">
+			<button type="button" class="btn btn-alt btn-transparent with-icon" (click)="toggleTrailer()">
 				Trailer
 				<svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"
 					xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="tw-w-6 tw-h-6">
@@ -105,7 +105,8 @@
 
 		<div class="posters-actors-div">
 			<p class="posters-actors-title">Posters</p>
-			<div class="posters-actors-container tw-bg-[#4040402d] tw-rounded-lg tw-backdrop-blur tw-p-2">
+			<div
+				class="posters-actors-container tw-bg-[#4040402d] tw-rounded-lg tw-backdrop-blur tw-p-2 tw-border tw-border-[#4040407a]">
 				@for (poster of posters.backdrops; track $index) {
 				<img class="poster-img" [alt]="" [src]="'https://image.tmdb.org/t/p/original/'+poster.file_path">
 				}
@@ -114,7 +115,8 @@
 
 		<div class="posters-actors-div">
 			<p class="posters-actors-title">Cast</p>
-			<div class="posters-actors-container tw-bg-[#4040402d] tw-rounded-lg tw-backdrop-blur tw-p-2">
+			<div
+				class="posters-actors-container tw-bg-[#4040402d] tw-rounded-lg tw-backdrop-blur tw-p-2 tw-border tw-border-[#4040407a]">
 				@for (actor of credits.cast; track $index) {
 				<div class="show-actor">
 					<div class="actor-img"
@@ -130,3 +132,5 @@
 	</div>
 
 </div>
+
+<app-video-modal [video]="trailer" [open]="showTrailer" (openChange)="showTrailer = $event"></app-video-modal>
