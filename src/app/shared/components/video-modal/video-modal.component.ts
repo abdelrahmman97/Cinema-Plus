@@ -1,5 +1,4 @@
-import { AfterViewInit, Component, EventEmitter, Input, OnChanges, OnInit, Output } from '@angular/core';
-import { Video } from '../../../core/services/movie/movie.models';
+import { Component, EventEmitter, Input, OnChanges, Output } from '@angular/core';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 
 @Component( {
@@ -10,17 +9,14 @@ import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 export class VideoModalComponent implements OnChanges {
 
 	link: SafeResourceUrl = '';
-	@Input() video!: Video;
+	@Input() url: string = '';
 	@Input() open: boolean = false;
 	@Output() openChange = new EventEmitter<boolean>();
 
 	constructor ( private domSanitizer: DomSanitizer ) { }
 
 	ngOnChanges (): void {
-		const url = 'https://www.youtube.com/embed/' + this.video.key;
-		this.link = this.domSanitizer.bypassSecurityTrustResourceUrl( url );
-		console.log(this.video);
-		console.log( this.link );
+		this.link = this.domSanitizer.bypassSecurityTrustResourceUrl( this.url );
 	}
 
 	get isModalOpen (): boolean {

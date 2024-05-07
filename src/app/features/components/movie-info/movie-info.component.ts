@@ -14,7 +14,7 @@ export class MovieInfoComponent implements OnInit {
 	posters: MoviePosters = {} as MoviePosters;
 	credits: MovieCredits = {} as MovieCredits;
 	videos: MovieVideos = {} as MovieVideos;
-	trailer: Video = {} as Video;
+	trailerLink: string = '';
 	showTrailer: boolean = false;
 
 	constructor (
@@ -76,7 +76,8 @@ export class MovieInfoComponent implements OnInit {
 	}
 
 	getTrailer ( videos: MovieVideos ) {
-		this.trailer = videos.results.find( ( v ) => v.type === 'Trailer' && v.name === "Official Trailer" && v.official === true ) ?? {} as Video;
+		const video = videos.results.find( ( v ) => v.type === 'Trailer' && v.name === "Official Trailer" && v.official === true ) ?? {} as Video;
+		this.trailerLink = 'https://www.youtube.com/embed/' + video.key;
 	}
 
 	toggleTrailer (): void {
