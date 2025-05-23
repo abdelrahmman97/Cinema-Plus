@@ -1,27 +1,49 @@
-# CinemaPlus
+<a name="readme-top"></a>
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.5.
+<br />
+<div align="center">
+  <h1 align="center" id="title">🎬 Cinema Plus | Movie App</h1>
 
-## Development server
+  <p align="center">
+    An Angular version for this project 👉 <a href="https://github.com/abdelrahmman97/Movie-App">Movie-App</a>
+  </p>
+</div>
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+<!-- TABLE OF CONTENTS -->
 
-## Code scaffolding
+<!-- ABOUT THE PROJECT -->
+## About The Project
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+![Cinema Plus Screenshot][product-screenshot]
 
-## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+This is a project is an update using Angular for the <a href="https://github.com/abdelrahmman97/Movie-App">Movie-App</a> project.
+<br />
+You can view the live demo here: <a href="https://cinema-plus-ng.vercel.app/">Live</a>
 
-## Running unit tests
+## Feature
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+*   View movies series and TV shows
+*   Search movies series and TV shows
+*   Bookmark movies
+*   Add movies to cart
+*   Login & Register Pages
+  
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-## Running end-to-end tests
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+### Built With
 
-## Further help
+* Angular
+* Tailwind CSS
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- GETTING STARTED -->
+
+<!-- USAGE EXAMPLES -->
+
+<!-- ACKNOWLEDGMENTS -->
+
+<!-- MARKDOWN LINKS & IMAGES -->
+[product-screenshot]: https://github.com/abdelrahmman97/Movie-App/blob/main/resources/Images/screenshot.jpeg
